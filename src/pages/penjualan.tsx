@@ -23,6 +23,7 @@ const Penjualan = () => {
   const [marketings, setMarketing] = useState<Marketing[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [payment, setPayment] = useState(false);
 
   const fetchMarkt = async () => {
     try {
@@ -43,8 +44,8 @@ const Penjualan = () => {
   };
 
   useEffect(() => {
-    fetchPenjualan();
     fetchMarkt();
+    fetchPenjualan();
   }, []);
 
   const getMarketing = (marketingId: string) => {
